@@ -1,0 +1,62 @@
+{
+    "description": {
+        "message": "ウェブサイトのスタイルシートで指定されたフォントを任意のフォントに置き換えます。",
+        "description": "Description of the extension"
+    },
+    "options_title": {
+        "message": "Font Swap | 設定",
+        "description": "Title of option page"
+    },
+    "options_about_source": {
+        "message": "「変更元」はウェブサイトのスタイルシートで指定されるフォント名を入力してください。",
+        "description": "Note of source"
+    },
+    "options_about_target": {
+        "message": "「変更先」はコンピュータにインストールされたフォントの完全名を入力してください。",
+        "description": "Note of target"
+    },
+    "options_source": {
+        "message": "変更元",
+        "description": "Source of swap rule"
+    },
+    "options_target": {
+        "message": "変更先",
+        "description": "Target of swap rule"
+    },
+    "options_enable": {
+        "message": "有効化",
+        "description": "Enable swap rule"
+    },
+    "options_font_name": {
+        "message": "フォント名",
+        "description": "Placeholder of font name"
+    },
+    "options_add": {
+        "message": "追加",
+        "description": "Add button text"
+    },
+    "options_delete": {
+        "message": "削除",
+        "description": "Delete button text"
+    },
+    "options_save": {
+        "message": "保存",
+        "description": "Save button text"
+    },
+    "options_saved": {
+        "message": "設定が保存されました。",
+        "description": "Message when options are saved"
+    },
+    "options_restore": {
+        "message": "デフォルト設定の復元",
+        "description": "Restore button text"
+    },
+    "options_confirm_restore": {
+        "message": "デフォルト設定を復元しますか？",
+        "description": "Confirm message to restore default options"
+    },
+    "options_restored": {
+        "message": "設定が復元されました (未保存)。",
+        "description": "Message when options are restored"
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title data-locale="options_title">Font Swap | Options</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+  <link rel="stylesheet" href="options.css">
+  <script defer type="module" src="options.js"></script>
+</head>
+
+<body>
+  <h1 id="title" data-locale="options_title">Font Swap | Options</h1>
+  <ul>
+    <li data-locale="options_about_source">The "source" must be the font name specified in a website's style sheet.</li>
+    <li data-locale="options_about_target">The "target" must be the full name of a font installed on your computer.</li>
+  </ul>
+
+  <form id="swap-form">
+    <table>
+      <thead>
+        <tr>
+          <th data-locale="options_source">Source</th>
+          <th></th>
+          <th data-locale="options_target">Target</th>
+          <th data-locale="options_enable">Enable</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="swap-tbody"></tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td>
+            <button id="add" title="Add" data-locale-title="options_add">
+              <span class="material-symbols-outlined">add</span>
+            </button>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <button type="submit">
+      <span class="material-symbols-outlined">save</span>
+      <span data-locale="options_save">Save</span>
+    </button>
+    <button type="button" id="restore">
+      <span class="material-symbols-outlined">replay</span>
+      <span data-locale="options_restore">Restore default options</span>
+    </button>
+  </form>
+
+  <div id="links">
+    <div>
+      Font Swap is created by <a target="_blank" href="https://negset.com">negset</a>
+    </div>
+    <a target="_blank" href="https://negset.com/FontSwap">
+      <span class="material-symbols-outlined">home</span>
+      <span>home page</span>
+    </a>
+    <a target="_blank" href="https://github.com/negset/FontSwap">
+      <span class="material-symbols-outlined">code</span>
+      <span>source code</span>
+    </a>
+  </div>
+</body>
+
+</html>

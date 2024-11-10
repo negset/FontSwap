@@ -1,0 +1,93 @@
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.4em;
+  padding: 0 2rem;
+  color: rgba(0, 0, 0, .87);
+}
+
+button,
+input {
+  color: inherit;
+}
+
+a {
+  color: #555;
+}
+
+#title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding: 1rem .5rem;
+  border-bottom: 1px solid #ccc;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("icons/icon24.png");
+    background-position: center;
+    background-size: contain;
+    margin-right: .4em;
+    vertical-align: text-top;
+  }
+}
+
+table {
+  border-spacing: 0px 1rem;
+  margin: 1rem 0;
+
+  tr {
+    text-align: center;
+  }
+
+  th:first-child,
+  th:nth-child(3) {
+    width: 200px;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 40px;
+  }
+
+  input[type="text"] {
+    box-sizing: border-box;
+    width: 200px;
+    font-size: inherit;
+    padding: 8px 12px;
+  }
+}
+
+button {
+  font-size: 16px;
+  padding: 8px 12px;
+
+  +& {
+    margin-left: 2rem;
+  }
+}
+
+#links {
+  font-size: .8em;
+  margin: 6rem 0 2rem 0;
+
+  div {
+    margin-bottom: .5rem;
+  }
+
+  a+a {
+    margin-left: 2rem;
+  }
+}
+
+.material-symbols-outlined {
+  font-size: inherit;
+  vertical-align: -11.5%;
+
+  &:has(+ span) {
+    margin-right: .1em;
+  }
+}

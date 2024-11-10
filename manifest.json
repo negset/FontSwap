@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "Font Swap",
+    "version": "1.0.0",
+    "default_locale": "en",
+    "description": "__MSG_description__",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "24": "icons/icon24.png",
+            "32": "icons/icon32.png"
+        }
+    },
+    "author": "negset",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "script.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "homepage_url": "https://negset.com/FontSwap",
+    "options_page": "options.html",
+    "permissions": [
+        "storage"
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "description": {
+        "message": "Replace the fonts specified in a website's stylesheet with the fonts of your choice.",
+        "description": "Description of the extension"
+    },
+    "options_title": {
+        "message": "Font Swap | Options",
+        "description": "Title of option page"
+    },
+    "options_about_source": {
+        "message": "The \"source\" must be the font name specified in a website's style sheet.",
+        "description": "Note of source"
+    },
+    "options_about_target": {
+        "message": "The \"target\" must be the full name of a font installed on your computer.",
+        "description": "Note of target"
+    },
+    "options_source": {
+        "message": "Source",
+        "description": "Source of swap rule"
+    },
+    "options_target": {
+        "message": "Target",
+        "description": "Target of swap rule"
+    },
+    "options_enable": {
+        "message": "Enable",
+        "description": "Enable swap rule"
+    },
+    "options_font_name": {
+        "message": "Font name",
+        "description": "Placeholder of font name"
+    },
+    "options_add": {
+        "message": "Add",
+        "description": "Add button text"
+    },
+    "options_delete": {
+        "message": "Delete",
+        "description": "Delete button text"
+    },
+    "options_save": {
+        "message": "Save",
+        "description": "Save button text"
+    },
+    "options_saved": {
+        "message": "Options has been saved.",
+        "description": "Message when options are saved"
+    },
+    "options_restore": {
+        "message": "Restore default options",
+        "description": "Restore button text"
+    },
+    "options_confirm_restore": {
+        "message": "Do you want to restore the default options?",
+        "description": "Confirm message to restore default options"
+    },
+    "options_restored": {
+        "message": "Options has been restored (not saved).",
+        "description": "Message when options are restored"
+    }
+}
