@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1,maximum-scale=1">
+
+  <title>Font Swap</title>
+
+  <meta name="description"
+    content="A Chrome extension that replaces the fonts specified in a website's stylesheet with the fonts of your choice.">
+  <meta name="pinterest" content="nopin">
+
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+        data-target="navbar-burger-target"></a>
+    </div>
+
+    <div id="navbar-burger-target" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#about">What's this?</a>
+        <a class="navbar-item" href="#download">Download</a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-link" href="https://github.com/negset/FontSwap" target="_blank">
+              <span class="icon"><i class="ri-github-fill"></i></span>
+              <span>star</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <section class="section">
+      <div class="has-text-centered">
+        <img class="top-image" src="favicon.png">
+        <h1 class="title is-1">Font Swap</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content">
+        <h2 class="title" id="about">What's this?</h2>
+        <p>
+          A Chrome extension that replaces the fonts specified in a website's stylesheet with the fonts of your choice.
+        </p>
+        <p>
+          For example, if you set it to replace “Segoe UI” with “Arial”, then “Arial” will be used on
+          <strong>all sites</strong> where “Segoe UI” is specified.
+        </p>
+        <p>You can change the font settings in the extension options.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content">
+        <h2 class="title is-3" id="download">Download</h2>
+        <p>If you like Font Swap, please consider rating it!</p>
+        <a class="button is-link is-medium" href="#TODO" target="_blank">
+          <span class="icon"><i class="ri-chrome-fill"></i></span>
+          <span>Chrome Web Store</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="content">
+        <h2 class="title is-3" id="code">Source code</h2>
+        <p>Pull requests are welcome.</p>
+        <a class="button is-link is-medium" href="https://github.com/negset/FontSwap" target="_blank">
+          <span class="icon"><i class="ri-github-fill"></i></span>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <i class="ri-copyright-line"></i> 2024 negset
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+body {
+  font-family: sans-serif;
+}
+
+.navbar {
+  box-shadow: 0 8px 16px rgb(10 10 10 / 10%);
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar,
+  .main,
+  .footer {
+    padding-left: calc((100% - 1200px) / 2);
+    padding-right: calc((100% - 1200px) / 2);
+  }
+}
+
+.navbar-burger::before {
+  font-family: 'remixicon' !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\EF3B";
+  font-size: 1.2rem;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-burger.is-active::before {
+  content: "\EB98";
+}
+
+.navbar-menu {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    display: block;
+    position: absolute;
+    font-weight: 700;
+    width: 100%;
+    opacity: 0%;
+    transition-duration: 0.5s;
+    pointer-events: none;
+
+    &.is-active {
+      opacity: 100%;
+      pointer-events: auto;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.button {
+  font-weight: 700;
+
+  .icon {
+    font-weight: 400;
+
+    i::before {
+      vertical-align: 12%;
+    }
+  }
+}
+
+.top-image {
+  margin-bottom: 2rem;
+}
+
+h2.title::before {
+  color: #485fc7;
+  font-family: 'remixicon' !important;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-right: 0.5em;
+}
+
+h2.title#about::before {
+  content: "\F047";
+}
+
+h2.title#download::before {
+  content: "\EC5A";
+}
+
+h2.title#code::before {
+  content: "\EBA9";
+}
