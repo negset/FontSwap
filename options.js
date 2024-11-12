@@ -36,12 +36,24 @@ function getRulesFromTable() {
   const rules = [];
   const tbody = document.getElementById("swap-tbody");
   for (const tr of tbody.children) {
-    const source = tr.children[0].children[0].value;
-    const target = tr.children[2].children[0].value;
+    const source = escapeInput(tr.children[0].children[0].value);
+    const target = escapeInput(tr.children[2].children[0].value);
     const enable = tr.children[3].children[0].checked;
     rules.push({ source, target, enable });
   }
   return rules;
+}
+
+function escapeInput(str) {
+  const patterns = {
+    "<": "&lt;",
+    ">": "&gt;",
+    "&": "&amp;",
+    "\"": "&quot;",
+    "'": "&#x27;",
+    "`": "&#x60;"
+  };
+  return str.replace(/[<>&"'`]/g, (match) => patterns[match]);
 }
 
 function addTableRow(source = "", target = "", enable = true) {
@@ -92,7 +104,7 @@ function addTableRow(source = "", target = "", enable = true) {
   spn.textContent = "delete";
   spn.classList.add("material-symbols-outlined");
   btn.title = chrome.i18n.getMessage("options_delete");
-  btn.onclick = () => { tbody.removeChild(tr) };
+  btn.onclick = () => tbody.removeChild(tr);
   btn.appendChild(spn);
   td.appendChild(btn);
   tr.appendChild(td);
@@ -105,7 +117,7 @@ window.addEventListener("load", () => {
   document.getElementById("swap-form").onsubmit = saveOptions;
   document.getElementById("restore").onclick = restoreOptions;
   // use lambda to prevent arguments being given
-  document.getElementById("add").onclick = () => { addTableRow() };
+  document.getElementById("add").onclick = () => addTableRow();
 
   // localize
   document.querySelectorAll("[data-locale]").forEach(e => {
