@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .navbar {
@@ -67,7 +67,7 @@ body {
     font-weight: 400;
 
     i::before {
-      vertical-align: 12%;
+      vertical-align: 5%;
     }
   }
 }
@@ -76,24 +76,26 @@ body {
   margin-bottom: 2rem;
 }
 
-h2.title::before {
-  color: #485fc7;
-  font-family: 'remixicon' !important;
-  font-weight: 400;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-right: 0.5em;
-}
+h2.title {
+  &::before {
+    color: #485fc7;
+    font-family: 'remixicon' !important;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 0.5em;
+  }
 
-h2.title#about::before {
-  content: "\F047";
-}
+  &#about::before {
+    content: "\F047";
+  }
 
-h2.title#download::before {
-  content: "\EC5A";
-}
-
-h2.title#code::before {
-  content: "\EBA9";
+  &#download::before {
+    content: "\EC5A";
+  }
+  
+  &#code::before {
+    content: "\EBA9";
+  }
 }
