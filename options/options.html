@@ -7,28 +7,38 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
   <link rel="stylesheet" href="options.css">
-  <script defer type="module" src="options.js"></script>
+  <script defer src="options.js"></script>
 </head>
 
 <body>
   <h1 id="title" data-locale="options_title">Font Swap | Options</h1>
-  <ul>
-    <li data-locale="options_about_source">The "source" must be the font name specified in a website's style sheet.</li>
-    <li data-locale="options_about_target">The "target" must be the full name of a font installed on your computer.</li>
-  </ul>
+
+  <div>
+    <p>
+      <span data-locale="options_permission_description">Swap requires “Local Font Access” permission.</span><br>
+      <span data-locale="options_permission_usage">This is used to display a list of installed fonts,
+        and obtain the full name of the specified font.</span>
+    </p>
+    <button id="grant">
+      <span class="material-symbols-outlined">settings</span>
+      <span data-locale="options_grant_permission">Grant permission</span>
+    </button>
+  </div>
 
   <form id="swap-form">
     <table>
       <thead>
         <tr>
-          <th data-locale="options_source">Source</th>
+          <th data-locale="options_source">Source font family</th>
           <th></th>
-          <th data-locale="options_target">Target</th>
+          <th data-locale="options_target">Target font family</th>
           <th data-locale="options_enable">Enable</th>
           <th></th>
         </tr>
       </thead>
-      <tbody id="swap-tbody"></tbody>
+      <tbody id="swap-tbody">
+        <datalist id="font-list"></datalist>
+      </tbody>
       <tfoot>
         <tr>
           <td></td>
@@ -44,7 +54,8 @@
       </tfoot>
     </table>
 
-    <button type="submit">
+    <button disabled type="submit" id="save" data-locale-title="options_permission_required"
+      title="Font permission is required.">
       <span class="material-symbols-outlined">save</span>
       <span data-locale="options_save">Save</span>
     </button>

@@ -1,27 +1,51 @@
 {
     "description": {
-        "message": "Replace the fonts specified in a website's stylesheet with the fonts of your choice.",
+        "message": "Replace the fonts specified in a website’s stylesheet with the fonts of your choice.",
         "description": "Description of the extension"
     },
     "options_title": {
         "message": "Font Swap | Options",
         "description": "Title of option page"
     },
-    "options_about_source": {
-        "message": "The \"source\" must be the font name specified in a website's style sheet.",
-        "description": "Note of source"
+    "options_permission_description": {
+        "message": "Font Swap requires “Local Font Access” permission.",
+        "description": "Description of font permission"
     },
-    "options_about_target": {
-        "message": "The \"target\" must be the full name of a font installed on your computer.",
-        "description": "Note of target"
+    "options_permission_usage": {
+        "message": "This is used to display a list of installed fonts, and obtain the full name of the specified font.",
+        "description": "Usage of font permission"
+    },
+    "options_grant_permission": {
+        "message": "Grant permission",
+        "description": "Button text for granting permission"
+    },
+    "options_permission_granted": {
+        "message": "Permission granted",
+        "description": "Button text for permission granted"
+    },
+    "options_permission_denied": {
+        "message": "Permission denied",
+        "description": "Button text for permission denied"
+    },
+    "options_open_permissions_settings": {
+        "message": "Open the permission settings of Font Swap.",
+        "description": "Confirm message to open permission settings"
+    },
+    "options_permission_request": {
+        "message": "Please allow the “Font” permission.",
+        "description": "Message requesting permission"
+    },
+    "options_permission_required": {
+        "message": "Font permission is required.",
+        "description": "Message when permission is not granted"
     },
     "options_source": {
-        "message": "Source",
-        "description": "Source of swap rule"
+        "message": "Source font family",
+        "description": "Source font family of swap rule"
     },
     "options_target": {
-        "message": "Target",
-        "description": "Target of swap rule"
+        "message": "Target font family",
+        "description": "Target font family of swap rule"
     },
     "options_enable": {
         "message": "Enable",
@@ -46,6 +70,16 @@
     "options_saved": {
         "message": "Options has been saved.",
         "description": "Message when options are saved"
+    },
+    "options_target_not_found": {
+        "message": "Target font family “$target$” is not found.",
+        "description": "Message when target font family is not found",
+        "placeholders": {
+            "target": {
+                "content": "$1",
+                "example": "Arial"
+            }
+        }
     },
     "options_restore": {
         "message": "Restore default options",

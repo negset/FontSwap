@@ -25,19 +25,24 @@ a {
   &::before {
     content: "";
     display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-image: url("icons/icon24.png");
+    width: 1.4em;
+    height: 1.4em;
+    background-image: url("/icons/icon128.png");
     background-position: center;
     background-size: contain;
-    margin-right: .4em;
-    vertical-align: text-top;
+    background-repeat: no-repeat;
+    margin-right: .6em;
+    vertical-align: -33%;
   }
 }
 
+#grant.denied {
+  color: red;
+}
+
 table {
-  border-spacing: 0px 1rem;
-  margin: 1rem 0;
+  border-spacing: 1rem;
+  margin: 1rem -1rem;
 
   tr {
     text-align: center;
@@ -45,7 +50,7 @@ table {
 
   th:first-child,
   th:nth-child(3) {
-    width: 200px;
+    width: 250px;
   }
 
   th:nth-child(2),
@@ -55,7 +60,7 @@ table {
 
   input[type="text"] {
     box-sizing: border-box;
-    width: 200px;
+    width: 250px;
     font-size: inherit;
     padding: 8px 12px;
   }
