@@ -11,7 +11,7 @@ async function insertStyle() {
       }
     }
   }
-  document.head.insertAdjacentHTML("beforeend", `<style>${styles}</style>`);
+  document.head.insertAdjacentHTML("beforeend", `<style id="fontswap">${styles}</style>`);
 };
 
 const observer = new MutationObserver(() => {
