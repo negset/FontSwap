@@ -16,8 +16,8 @@
   <div>
     <p>
       <span data-locale="options_permission_description">Swap requires “Local Font Access” permission.</span><br>
-      <span data-locale="options_permission_usage">This is used to display a list of installed fonts,
-        and obtain the full name of the specified font.</span>
+      <span data-locale="options_permission_usage">This is used to list installed fonts and obtain details of
+        a specified font like the full name, weight, and style.</span>
     </p>
     <button id="grant">
       <span class="material-symbols-outlined">settings</span>
@@ -25,7 +25,7 @@
     </button>
   </div>
 
-  <form id="swap-form">
+  <form id="rule-form">
     <table>
       <thead>
         <tr>
@@ -36,7 +36,7 @@
           <th></th>
         </tr>
       </thead>
-      <tbody id="swap-tbody">
+      <tbody id="rule-tbody">
         <datalist id="font-list"></datalist>
       </tbody>
       <tfoot>

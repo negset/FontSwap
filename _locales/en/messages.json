@@ -12,7 +12,7 @@
         "description": "Description of font permission"
     },
     "options_permission_usage": {
-        "message": "This is used to display a list of installed fonts, and obtain the full name of the specified font.",
+        "message": "This is used to list installed fonts and obtain details of a specified font like the full name, weight, and style.",
         "description": "Usage of font permission"
     },
     "options_grant_permission": {
