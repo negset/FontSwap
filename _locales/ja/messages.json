@@ -7,21 +7,45 @@
         "message": "Font Swap | 設定",
         "description": "Title of option page"
     },
-    "options_about_source": {
-        "message": "「変更元」はウェブサイトのスタイルシートで指定されるフォント名を入力してください。",
-        "description": "Note of source"
+    "options_permission_description": {
+        "message": "Font Swap の動作には「Local Font Access」権限が必要です。",
+        "description": "Description of font permission"
     },
-    "options_about_target": {
-        "message": "「変更先」はコンピュータにインストールされたフォントの完全名を入力してください。",
-        "description": "Note of target"
+    "options_permission_usage": {
+        "message": "これはインストール済みフォントの一覧を表示し、指定されたフォントの完全名、太さ、スタイルなどの詳細情報を取得するために使用されます。",
+        "description": "Usage of font permission"
+    },
+    "options_grant_permission": {
+        "message": "権限を付与する",
+        "description": "Button text for granting permission"
+    },
+    "options_permission_granted": {
+        "message": "権限が付与されました",
+        "description": "Button text for permission granted"
+    },
+    "options_permission_denied": {
+        "message": "権限が拒否されました",
+        "description": "Button text for permission denied"
+    },
+    "options_open_permissions_settings": {
+        "message": "Font Swap の権限設定を開きます。",
+        "description": "Confirm message to open permission settings"
+    },
+    "options_permission_request": {
+        "message": "「フォント」権限を許可してください。",
+        "description": "Message requesting permission"
+    },
+    "options_permission_required": {
+        "message": "フォント権限が必要です。",
+        "description": "Message when permission is not granted."
     },
     "options_source": {
-        "message": "変更元",
-        "description": "Source of swap rule"
+        "message": "変更元フォントファミリー",
+        "description": "Source font family of swap rule"
     },
     "options_target": {
-        "message": "変更先",
-        "description": "Target of swap rule"
+        "message": "変更先フォントファミリー",
+        "description": "Target font family of swap rule"
     },
     "options_enable": {
         "message": "有効化",
@@ -46,6 +70,16 @@
     "options_saved": {
         "message": "設定が保存されました。",
         "description": "Message when options are saved"
+    },
+    "options_target_not_found": {
+        "message": "変更先フォントファミリー「$target$」が見つかりません。",
+        "description": "Message when target font family is not found",
+        "placeholders": {
+            "target": {
+                "content": "$1",
+                "example": "Arial"
+            }
+        }
     },
     "options_restore": {
         "message": "デフォルト設定の復元",

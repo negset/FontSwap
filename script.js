@@ -5,10 +5,13 @@ async function insertStyle() {
   let styles = "";
   for (const rule of options.rules) {
     if (rule["enable"]) {
-      styles += `@font-face{font-family:'${rule["source"]}';src:local('${rule["target"]}')}`;
+      for (const local of rule["locals"]) {
+        styles += `@font-face{font-family:'${rule["source"]}';src:local('${local.fullName}');`
+          + `font-weight:${local.weight};font-style:${local.style};}`;
+      }
     }
   }
-  document.head.insertAdjacentHTML("beforeend", `<style>${styles}</style>`);
+  document.head.insertAdjacentHTML("beforeend", `<style id="fontswap">${styles}</style>`);
 };
 
 const observer = new MutationObserver(() => {
