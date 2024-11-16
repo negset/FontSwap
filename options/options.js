@@ -43,7 +43,7 @@ function restoreOptions() {
 }
 
 function createTableFromRules(rules) {
-  const tbody = document.getElementById("swap-tbody");
+  const tbody = document.getElementById("rule-tbody");
   tbody.replaceChildren();
 
   for (const rule of rules) {
@@ -53,7 +53,7 @@ function createTableFromRules(rules) {
 
 function getRulesFromTable() {
   const rules = [];
-  const tbody = document.getElementById("swap-tbody");
+  const tbody = document.getElementById("rule-tbody");
   const weightMap = {
     "thin": 100,
     "extralight": 200,
@@ -123,7 +123,7 @@ function escapeInput(str) {
 }
 
 function addTableRow(source = "", target = "", enable = true) {
-  const tbody = document.getElementById("swap-tbody");
+  const tbody = document.getElementById("rule-tbody");
   const tr = document.createElement("tr");
   let td, inp, btn, spn;
 
@@ -214,7 +214,8 @@ function applyPermissionState(state) {
         const msg = chrome.i18n.getMessage("options_open_permissions_settings")
           + "\n" + chrome.i18n.getMessage("options_permission_request");
         if (confirm(msg)) {
-          const url = "chrome://settings/content/siteDetails?site=chrome-extension%3A%2F%2F" + chrome.runtime.id;
+          const url = "chrome://settings/content/siteDetails?site=chrome-extension%3A%2F%2F"
+            + chrome.runtime.id;
           chrome.tabs.create({ url });
         }
       };
@@ -236,7 +237,7 @@ addEventListener("load", () => {
   localize();
 
   document.getElementById("grant").onclick = updateLocalFonts;
-  document.getElementById("swap-form").onsubmit = saveOptions;
+  document.getElementById("rule-form").onsubmit = saveOptions;
   document.getElementById("restore").onclick = restoreOptions;
   // use lambda to prevent arguments being given
   document.getElementById("add").onclick = () => addTableRow();
@@ -247,8 +248,6 @@ addEventListener("load", () => {
       if (status.state == "granted") updateLocalFonts();
       applyPermissionState(status.state)
 
-      status.onchange = () => {
-        applyPermissionState(status.state);
-      }
+      status.onchange = () => applyPermissionState(status.state);
     });
 });
