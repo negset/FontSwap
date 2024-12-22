@@ -16,7 +16,8 @@ body {
 }
 
 .navbar-burger::before {
-  font-family: 'remixicon' !important;
+  font-family: "remixicon" !important;
+  font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -79,7 +80,7 @@ body {
 h2.title {
   &::before {
     color: #485fc7;
-    font-family: 'remixicon' !important;
+    font-family: "remixicon" !important;
     font-weight: 400;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
@@ -91,11 +92,30 @@ h2.title {
     content: "\F047";
   }
 
+  &#features::before {
+    content: "\F206";
+  }
+
   &#download::before {
     content: "\EC5A";
   }
   
   &#code::before {
     content: "\EBA9";
+  }
+}
+
+h3.title {
+  font-size: 1.25rem;
+
+  &::before {
+    font-family: "remixicon" !important;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 0.5em;
+    color: #485fc7;
+    content: "\EB7B";
   }
 }
