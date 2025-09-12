@@ -68,7 +68,7 @@
         "description": "Save button text"
     },
     "options_saved": {
-        "message": "Options has been saved.",
+        "message": "Options have been saved.",
         "description": "Message when options are saved"
     },
     "options_target_not_found": {
@@ -90,7 +90,7 @@
         "description": "Confirm message to restore default options"
     },
     "options_restored": {
-        "message": "Options has been restored (not saved).",
+        "message": "Options have been restored (not saved).",
         "description": "Message when options are restored"
     }
 }
