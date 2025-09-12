@@ -30,9 +30,6 @@ function saveOptions() {
   } catch (err) {
     alert(chrome.i18n.getMessage("options_save_error") + ": " + err.message);
   }
-
-  // do not submit
-  return false;
 }
 
 function restoreOptions() {
@@ -42,8 +39,60 @@ function restoreOptions() {
   }
 }
 
+function exportOptions() {
+  chrome.storage.sync.get(defaultOptions, items => {
+    const json = JSON.stringify(items, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "fontswap_options.json";
+    a.click();
+    // relase object url
+    URL.revokeObjectURL(url);
+  });
+}
+
+function importOptions() {
+  const fileInput = document.querySelector("#import-input");
+  fileInput.click();
+
+  fileInput.onchange = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const obj = JSON.parse(e.target.result);
+        if (!validateOptions(obj)) {
+          throw new Error(chrome.i18n.getMessage("options_invalid_file_structure"));
+        }
+        createTableFromRules(obj.rules);
+        alert(chrome.i18n.getMessage("options_imported"));
+      } catch (err) {
+        alert(chrome.i18n.getMessage("options_import_error") + ": " + err.message);
+      }
+    };
+    reader.readAsText(file, "utf-8");
+    // reset value to allow repeated file selection
+    fileInput.value = "";
+  };
+}
+
+function validateOptions(obj) {
+  if (typeof obj !== "object" || obj === null) return false;
+  if (!Array.isArray(obj.rules)) return false;
+  for (const rule of obj.rules) {
+    if (typeof rule.enable !== "boolean") return false;
+    if (typeof rule.source !== "string") return false;
+    if (typeof rule.target !== "string") return false;
+  }
+  return true;
+}
+
 function createTableFromRules(rules) {
-  const tbody = document.getElementById("rule-tbody");
+  const tbody = document.querySelector("#rule-tbody");
   tbody.replaceChildren();
 
   for (const rule of rules) {
@@ -53,7 +102,7 @@ function createTableFromRules(rules) {
 
 function getRulesFromTable() {
   const rules = [];
-  const tbody = document.getElementById("rule-tbody");
+  const tbody = document.querySelector("#rule-tbody");
   const weightMap = {
     "thin": 100,
     "extralight": 200,
@@ -123,7 +172,7 @@ function escapeInput(str) {
 }
 
 function addTableRow(source = "", target = "", enable = true) {
-  const tbody = document.getElementById("rule-tbody");
+  const tbody = document.querySelector("#rule-tbody");
   const tr = document.createElement("tr");
   let td, inp, btn, spn;
 
@@ -184,26 +233,26 @@ async function updateLocalFonts() {
 
   // remove dups
   const families = Array.from(new Set(localFonts.map(f => f.family)));
-  const fl = document.getElementById("font-list");
-  fl.replaceChildren();
+  const fontList = document.querySelector("#font-list");
+  fontList.replaceChildren();
   for (const family of families) {
     const op = document.createElement("option");
     op.value = family;
-    fl.appendChild(op);
+    fontList.appendChild(op);
   }
 }
 
 function applyPermissionState(state) {
-  const grant = document.getElementById("grant");
-  const save = document.getElementById("save");
+  const grant = document.querySelector("#grant");
+  const ruleForm = document.querySelector("#rule-form fieldset");
   switch (state) {
     case "granted":
       grant.classList.remove("denied");
       grant.children[0].textContent = "check_circle";
       grant.children[1].textContent = chrome.i18n.getMessage("options_permission_granted");
       grant.disabled = true;
-      save.disabled = false;
-      save.title = "";
+      ruleForm.disabled = false;
+      ruleForm.title = "";
       break;
 
     case "denied":
@@ -236,18 +285,20 @@ addEventListener("load", () => {
   loadOptions();
   localize();
 
-  document.getElementById("grant").onclick = updateLocalFonts;
-  document.getElementById("rule-form").onsubmit = saveOptions;
-  document.getElementById("restore").onclick = restoreOptions;
+  document.querySelector("#grant").onclick = updateLocalFonts;
+  // return false to prevent submit
+  document.querySelector("#rule-form").onsubmit = () => { saveOptions(); return false; };
+  document.querySelector("#restore").onclick = restoreOptions;
+  document.querySelector("#export").onclick = exportOptions;
+  document.querySelector("#import").onclick = importOptions;
   // use lambda to prevent arguments being given
-  document.getElementById("add").onclick = () => addTableRow();
+  document.querySelector("#add").onclick = () => addTableRow();
 
   navigator.permissions
     .query({ name: "local-fonts" })
     .then((status) => {
       if (status.state == "granted") updateLocalFonts();
       applyPermissionState(status.state)
-
       status.onchange = () => applyPermissionState(status.state);
     });
 });

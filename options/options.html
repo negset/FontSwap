@@ -26,43 +26,57 @@
   </div>
 
   <form id="rule-form">
-    <table>
-      <thead>
-        <tr>
-          <th data-locale="options_source">Source font family</th>
-          <th></th>
-          <th data-locale="options_target">Target font family</th>
-          <th data-locale="options_enable">Enable</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="rule-tbody">
-        <datalist id="font-list"></datalist>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td></td>
-          <td>
-            <button id="add" title="Add" data-locale-title="options_add">
-              <span class="material-symbols-outlined">add</span>
-            </button>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tfoot>
-    </table>
+    <fieldset disabled data-locale-title="options_permission_required" title="Font permission is required.">
+      <table>
+        <thead>
+          <tr>
+            <th data-locale="options_source">Source font family</th>
+            <th></th>
+            <th data-locale="options_target">Target font family</th>
+            <th data-locale="options_enable">Enable</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rule-tbody">
+          <datalist id="font-list"></datalist>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>
+              <button id="add" title="Add" data-locale-title="options_add">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
 
-    <button disabled type="submit" id="save" data-locale-title="options_permission_required"
-      title="Font permission is required.">
-      <span class="material-symbols-outlined">save</span>
-      <span data-locale="options_save">Save</span>
-    </button>
-    <button type="button" id="restore">
-      <span class="material-symbols-outlined">replay</span>
-      <span data-locale="options_restore">Restore default options</span>
-    </button>
+      <div class="buttons">
+        <button type="submit" id="save">
+          <span class="material-symbols-outlined">save</span>
+          <span data-locale="options_save">Save</span>
+        </button>
+      </div>
+      <div class="buttons">
+        <button type="button" id="restore">
+          <span class="material-symbols-outlined">replay</span>
+          <span data-locale="options_restore">Restore default options</span>
+        </button>
+        <button type="button" id="export">
+          <span class="material-symbols-outlined">upload</span>
+          <span data-locale="options_export">Export options</span>
+        </button>
+        <button type="button" id="import">
+          <span class="material-symbols-outlined">download</span>
+          <span data-locale="options_import">Import options</span>
+          <input type="file" id="import-input" accept="application/json">
+        </button>
+      </div>
+    </fieldset>
   </form>
 
   <div id="links">

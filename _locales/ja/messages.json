@@ -96,5 +96,25 @@
     "options_restored": {
         "message": "設定が復元されました (未保存)。",
         "description": "Message when options are restored"
+    },
+    "options_export": {
+        "message": "設定のエクスポート",
+        "description": "Export button text"
+    },
+    "options_import": {
+        "message": "設定のインポート",
+        "description": "Import button text"
+    },
+    "options_imported": {
+        "message": "設定がインポートされました (未保存)。",
+        "description": "Message when options are imported"
+    },
+    "options_import_error": {
+        "message": "インポートエラー",
+        "description": "Import error message title"
+    },
+    "options_invalid_file_structure": {
+        "message": "設定ファイルの構造が無効です。",
+        "description": "Message when options file structure is invalid"
     }
 }

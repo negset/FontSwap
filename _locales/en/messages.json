@@ -96,5 +96,25 @@
     "options_restored": {
         "message": "Options have been restored (not saved).",
         "description": "Message when options are restored"
+    },
+    "options_export": {
+        "message": "Export options",
+        "description": "Export button text"
+    },
+    "options_import": {
+        "message": "Import options",
+        "description": "Import button text"
+    },
+    "options_imported": {
+        "message": "Options have been imported (not saved).",
+        "description": "Message when options are imported"
+    },
+    "options_import_error": {
+        "message": "Import Error",
+        "description": "Import error message title"
+    },
+    "options_invalid_file_structure": {
+        "message": "Options file structure is invalid.",
+        "description": "Message when options file structure is invalid"
     }
 }

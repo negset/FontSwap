@@ -40,6 +40,12 @@ a {
   color: red;
 }
 
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 table {
   border-spacing: 1rem;
   margin: 1rem -1rem;
@@ -75,9 +81,17 @@ button {
   }
 }
 
+.buttons {
+  margin: 2rem 0;
+}
+
+#import-input {
+  display: none;
+}
+
 #links {
   font-size: .8em;
-  margin: 6rem 0 2rem 0;
+  margin: 4rem 0 2rem 0;
 
   div {
     margin-bottom: .5rem;
