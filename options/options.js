@@ -27,8 +27,8 @@ function saveOptions() {
     chrome.storage.sync.set({ rules }, () => {
       alert(chrome.i18n.getMessage("options_saved"));
     });
-  } catch (e) {
-    alert(e);
+  } catch (err) {
+    alert(chrome.i18n.getMessage("options_save_error") + ": " + err.message);
   }
 
   // do not submit

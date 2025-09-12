@@ -67,6 +67,10 @@
         "message": "Save",
         "description": "Save button text"
     },
+    "options_save_error": {
+        "message": "Save Error",
+        "description": "Save error message title"
+    },
     "options_saved": {
         "message": "Options have been saved.",
         "description": "Message when options are saved"

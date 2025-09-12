@@ -67,6 +67,10 @@
         "message": "保存",
         "description": "Save button text"
     },
+    "options_save_error": {
+        "message": "保存エラー",
+        "description": "Save error message title"
+    },
     "options_saved": {
         "message": "設定が保存されました。",
         "description": "Message when options are saved"
