@@ -183,6 +183,10 @@ function addTableRow(source = "", target = "", enable = true) {
   inp.required = true;
   inp.value = source;
   inp.placeholder = chrome.i18n.getMessage("options_font_name");
+  inp.addEventListener("keydown", e => {
+    // prevent to submit
+    if (e.key === "Enter") e.preventDefault();
+  });
   td.appendChild(inp);
   tr.appendChild(td);
 
@@ -202,6 +206,10 @@ function addTableRow(source = "", target = "", enable = true) {
   inp.value = target;
   inp.setAttribute("list", "font-list");
   inp.placeholder = chrome.i18n.getMessage("options_font_name");
+  inp.addEventListener("keydown", e => {
+    // prevent to submit
+    if (e.key === "Enter") e.preventDefault();
+  });
   td.appendChild(inp);
   tr.appendChild(td);
 
@@ -210,6 +218,10 @@ function addTableRow(source = "", target = "", enable = true) {
   inp = document.createElement("input");
   inp.type = "checkbox";
   inp.checked = enable;
+  inp.addEventListener("keydown", e => {
+    // prevent to submit
+    if (e.key === "Enter") e.preventDefault();
+  });
   td.appendChild(inp);
   tr.appendChild(td);
 
@@ -220,6 +232,7 @@ function addTableRow(source = "", target = "", enable = true) {
   spn.textContent = "delete";
   spn.classList.add("material-symbols-outlined");
   btn.title = chrome.i18n.getMessage("options_delete");
+  btn.type = "button";
   btn.onclick = () => tbody.removeChild(tr);
   btn.appendChild(spn);
   td.appendChild(btn);
@@ -286,8 +299,7 @@ addEventListener("load", () => {
   localize();
 
   document.querySelector("#grant").onclick = updateLocalFonts;
-  // return false to prevent submit
-  document.querySelector("#rule-form").onsubmit = () => { saveOptions(); return false; };
+  document.querySelector("#rule-form").onsubmit = e => { e.preventDefault(); saveOptions(); };
   document.querySelector("#restore").onclick = restoreOptions;
   document.querySelector("#export").onclick = exportOptions;
   document.querySelector("#import").onclick = importOptions;
