@@ -41,6 +41,10 @@ function restoreOptions() {
 
 function exportOptions() {
   chrome.storage.sync.get(defaultOptions, items => {
+    for (const rule of items.rules) {
+      // do not export locals
+      delete rule.locals;
+    }
     const json = JSON.stringify(items, null, 2);
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
