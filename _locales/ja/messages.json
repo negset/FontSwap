@@ -116,5 +116,9 @@
     "options_invalid_file_structure": {
         "message": "設定ファイルの構造が無効です。",
         "description": "Message when options file structure is invalid"
+    },
+    "options_unsaved_message": {
+        "message": "変更が保存されていません。",
+        "description": "Message when options have not been saved."
     }
 }

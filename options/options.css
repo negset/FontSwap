@@ -89,6 +89,12 @@ button {
   display: none;
 }
 
+#unsaved-message {
+  color: red;
+  margin-left: 2rem;
+  display: none;
+}
+
 #links {
   font-size: .8em;
   margin: 4rem 0 2rem 0;

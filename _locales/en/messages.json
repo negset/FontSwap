@@ -116,5 +116,9 @@
     "options_invalid_file_structure": {
         "message": "Options file structure is invalid.",
         "description": "Message when options file structure is invalid"
+    },
+    "options_unsaved_message": {
+        "message": "Changes have not been saved.",
+        "description": "Message when options have not been saved."
     }
 }
