@@ -18,7 +18,7 @@ let localFonts = [];
 function loadOptions() {
   chrome.storage.sync.get(defaultOptions, items => {
     createTableFromRules(items.rules);
-    updateUnsavedMessage(false);
+    toggleUnsavedMessage(false);
   });
 }
 
@@ -104,7 +104,7 @@ function createTableFromRules(rules) {
     addTableRow(rule["source"], rule["target"], rule["enable"]);
   }
 
-  updateUnsavedMessage(true);
+  toggleUnsavedMessage(true);
 }
 
 function getRulesFromTable() {
@@ -195,7 +195,7 @@ function addTableRow(source = "", target = "", enable = true) {
     if (e.key === "Enter") e.preventDefault();
   };
   inp.oninput = () => {
-    updateUnsavedMessage(true);
+    toggleUnsavedMessage(true);
   };
   td.appendChild(inp);
   tr.appendChild(td);
@@ -221,7 +221,7 @@ function addTableRow(source = "", target = "", enable = true) {
     if (e.key === "Enter") e.preventDefault();
   };
   inp.oninput = () => {
-    updateUnsavedMessage(true);
+    toggleUnsavedMessage(true);
   };
   td.appendChild(inp);
   tr.appendChild(td);
@@ -236,7 +236,7 @@ function addTableRow(source = "", target = "", enable = true) {
     if (e.key === "Enter") e.preventDefault();
   };
   inp.oninput = () => {
-    updateUnsavedMessage(true);
+    toggleUnsavedMessage(true);
   };
   td.appendChild(inp);
   tr.appendChild(td);
@@ -251,7 +251,7 @@ function addTableRow(source = "", target = "", enable = true) {
   btn.type = "button";
   btn.onclick = () => {
     tbody.removeChild(tr);
-    updateUnsavedMessage(true);
+    toggleUnsavedMessage(true);
   };
   btn.appendChild(spn);
   td.appendChild(btn);
@@ -260,10 +260,9 @@ function addTableRow(source = "", target = "", enable = true) {
   tbody.appendChild(tr);
 }
 
-function updateUnsavedMessage(show) {
+function toggleUnsavedMessage(show) {
   const unsavedMessage = document.querySelector("#unsaved-message");
   unsavedMessage.style.display = show ? "inline" : "none";
-  console.log(show);
 }
 
 async function updateLocalFonts() {
@@ -329,12 +328,12 @@ addEventListener("load", () => {
   document.querySelector("#import").onclick = importOptions;
   document.querySelector("#add").onclick = () => {
     addTableRow();
-    updateUnsavedMessage(true);
+    toggleUnsavedMessage(true);
   };
   document.querySelector("#rule-form").onsubmit = e => {
     e.preventDefault();
     saveOptions();
-    updateUnsavedMessage(false);
+    toggleUnsavedMessage(false);
   };
 
   navigator.permissions
